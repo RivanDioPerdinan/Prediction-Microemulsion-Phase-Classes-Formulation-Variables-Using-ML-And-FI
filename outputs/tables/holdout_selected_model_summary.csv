@@ -1,0 +1,2 @@
+selected_model,accuracy,precision_macro,recall_macro,f1_macro,training_time_seconds
+DecisionTree + scaling + SMOTE,0.9047619047619048,0.9305555555555555,0.9134199134199134,0.919732441471572,0.10340332984924316

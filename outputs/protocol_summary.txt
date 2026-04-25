@@ -1,0 +1,14 @@
+Reproducible workflow summary
+=============================
+Random state: 42
+Dataset: manuscript-specific dataset with seven numerical formulation variables and target column 'FASA'
+Train-test split: stratified 80:20
+Model selection: repeated stratified 5-fold CV with 10 repeats on training data only
+Model configurations: fixed scikit-learn hyperparameters; no grid search in this version
+Categorical encoding: not used
+Scaling: fitted only within training pipelines/folds
+SMOTE: applied only inside training pipelines/folds, never before splitting
+Feature importance: Mutual Information, LinearSVC-L1, LinearSVC-L2, and SHAP computed using training data only
+SHAP: background samples and explained instances sampled only from training folds
+Hold-out test: used only after model selection for final evaluation and descriptive model comparison
+Figure resolution: 600 dpi

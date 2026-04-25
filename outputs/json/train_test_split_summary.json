@@ -1,0 +1,14 @@
+{
+  "train_size": 166,
+  "test_size": 42,
+  "train_class_distribution": {
+    "1": 86,
+    "2": 54,
+    "3": 26
+  },
+  "test_class_distribution": {
+    "1": 22,
+    "2": 14,
+    "3": 6
+  }
+}
