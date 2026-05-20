@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20306768.svg)](https://doi.org/10.5281/zenodo.20306768)
+
 # Microemulsion Phase-Class Prediction
 
 This repository contains the manuscript-specific dataset, source code, and reproducible Python workflow for predicting visually assigned microemulsion formulation states from numerical formulation variables.
@@ -437,7 +439,9 @@ This file records:
 
 The raw dataset, cleaned dataset, data dictionary, preprocessing code, model-training code, random seed settings, package requirements, run script, generated tables, generated figures, JSON summaries, logs, and exact output files are included in this repository.
 
-A stable archived version of the repository should be deposited and cited upon manuscript acceptance.
+A stable archived version of this repository is available on Zenodo:
+
+DOI: [10.5281/zenodo.20306768](https://doi.org/10.5281/zenodo.20306768)
 
 ---
 
