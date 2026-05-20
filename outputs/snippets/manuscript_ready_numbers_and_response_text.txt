@@ -9,32 +9,32 @@ No categorical encoding was used because all seven input variables are numerical
 Scaling and SMOTE were applied only inside training pipelines and cross-validation folds.
 The hold-out test set was not used for feature ranking, SHAP background data, model selection, or preprocessing fitting.
 
-Best model selected by training-only repeated CV: DecisionTree + scaling + SMOTE.
-Repeated stratified CV for the selected model: accuracy = 0.8343 ± 0.0745; precision = 0.8479 ± 0.0862; recall = 0.7920 ± 0.1000; F1-score = 0.8037 ± 0.0938.
-Final hold-out evaluation of the pre-selected model: accuracy = 0.9048; precision = 0.9306; recall = 0.9134; F1-score = 0.9197.
+Best model selected by training-only repeated CV: DecisionTree-pruned + scaling + SMOTE.
+Repeated stratified CV for the selected model: accuracy = 0.8717 ± 0.0563; precision = 0.8759 ± 0.0690; recall = 0.8274 ± 0.0841; F1-score = 0.8382 ± 0.0786.
+Final hold-out evaluation of the pre-selected model: accuracy = 0.9286; precision = 0.9454; recall = 0.9372; F1-score = 0.9407.
 
 Top feature rankings:
 Mutual Information: Surfactant (HLB), Surfactant Amount (g), Co-Surfactant (Ratio), Oil (mPa.s), Water Phase Amount (g), Oil Amount (g)
-LinearSVC-L1: Co-Surfactant (Ratio), Surfactant Amount (g), Surfactant (HLB), Oil (mPa.s), Water Phase (V), Water Phase Amount (g)
-LinearSVC-L2: Co-Surfactant (Ratio), Surfactant Amount (g), Surfactant (HLB), Oil (mPa.s), Water Phase (V), Water Phase Amount (g)
-SHAP Rank 1 (DecisionTree + scaling + SMOTE): Surfactant (HLB), Co-Surfactant (Ratio), Oil (mPa.s), Water Phase Amount (g), Water Phase (V), Surfactant Amount (g)
-SHAP Rank 2 (KNN + scaling + SMOTE): Surfactant (HLB), Water Phase (V), Water Phase Amount (g), Oil Amount (g), Surfactant Amount (g), Oil (mPa.s)
-SHAP Rank 3 (SVM-rbf + scaling + SMOTE): Surfactant (HLB), Water Phase Amount (g), Water Phase (V), Oil Amount (g), Surfactant Amount (g), Co-Surfactant (Ratio)
+LinearSVC-L1: Co-Surfactant (Ratio), Surfactant Amount (g), Surfactant (HLB), Oil (mPa.s), Water-phase potential (V), Water Phase Amount (g)
+LinearSVC-L2: Co-Surfactant (Ratio), Surfactant Amount (g), Surfactant (HLB), Oil (mPa.s), Water-phase potential (V), Water Phase Amount (g)
+SHAP Rank 1 (DecisionTree-pruned + scaling + SMOTE): Surfactant (HLB), Co-Surfactant (Ratio), Water Phase Amount (g), Oil (mPa.s), Water-phase potential (V), Surfactant Amount (g)
+SHAP Rank 2 (Baseline SVM-linear (no scaling, no SMOTE)): Surfactant (HLB), Co-Surfactant (Ratio), Oil (mPa.s), Surfactant Amount (g), Water-phase potential (V), Oil Amount (g)
+SHAP Rank 3 (SVM-rbf + scaling + SMOTE): Surfactant (HLB), Water Phase Amount (g), Water-phase potential (V), Oil Amount (g), Surfactant Amount (g), Co-Surfactant (Ratio)
 
 Hold-out confusion matrix counts:
           Pred_1  Pred_2  Pred_3
 Actual_1      21       1       0
-Actual_2       3      11       0
+Actual_2       2      12       0
 Actual_3       0       0       6
 
 Class-wise hold-out metrics:
        label  precision   recall  f1-score   support
-           1   0.875000 0.954545  0.913043 22.000000
-           2   0.916667 0.785714  0.846154 14.000000
+           1   0.913043 0.954545  0.933333 22.000000
+           2   0.923077 0.857143  0.888889 14.000000
            3   1.000000 1.000000  1.000000  6.000000
-    accuracy   0.904762 0.904762  0.904762  0.904762
-   macro avg   0.930556 0.913420  0.919732 42.000000
-weighted avg   0.906746 0.904762  0.903169 42.000000
+    accuracy   0.928571 0.928571  0.928571  0.928571
+   macro avg   0.945373 0.937229  0.940741 42.000000
+weighted avg   0.928810 0.928571  0.928042 42.000000
 
 Suggested reviewer-response sentence:
 We have replaced the previous repository with a clean manuscript-specific implementation. The final repository contains the exact dataset, source code, fixed random seed, environment file, and generated output tables and figures. The script uses only the seven numerical formulation variables described in the manuscript, applies SMOTE and scaling only within training pipelines, computes feature importance using training data only, and reserves the hold-out test set for final evaluation.

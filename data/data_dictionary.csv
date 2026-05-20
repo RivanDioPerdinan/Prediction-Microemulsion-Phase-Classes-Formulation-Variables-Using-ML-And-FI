@@ -1,0 +1,9 @@
+variable_name,unit,type,description,used_in_model
+Oil (mPa.s),mPa.s,numerical feature,Oil viscosity descriptor,True
+Oil Amount (g),g,numerical feature,Oil amount in formulation,True
+Surfactant (HLB),dimensionless,numerical feature,Hydrophilic-lipophilic balance descriptor,True
+Surfactant Amount (g),g,numerical feature,Surfactant amount in formulation,True
+Water-phase potential (V),V,numerical feature,Electrical potential parameter of the water phase,True
+Water Phase Amount (g),g,numerical feature,Water phase amount in formulation,True
+Co-Surfactant (Ratio),ratio,numerical feature,Co-surfactant ratio in formulation,True
+phase,class label,target,Visually assigned formulation-state label,True

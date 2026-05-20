@@ -1,0 +1,4 @@
+class,before_mean,before_min,before_max,after_mean,after_min,after_max
+Phase 1,68.8,68,69,68.8,68,69
+Phase 2,43.2,43,44,68.8,68,69
+Phase 3,20.8,20,21,68.8,68,69

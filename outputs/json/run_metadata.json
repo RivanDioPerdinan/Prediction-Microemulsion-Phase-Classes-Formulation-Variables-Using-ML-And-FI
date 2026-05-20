@@ -1,0 +1,49 @@
+{
+  "raw_dataset_path": "data\\raw_dataset.csv",
+  "cleaned_dataset_output": "outputs/tables/cleaned_dataset_used_for_modeling.csv",
+  "target_column": "phase",
+  "feature_columns": [
+    "Oil (mPa.s)",
+    "Oil Amount (g)",
+    "Surfactant (HLB)",
+    "Surfactant Amount (g)",
+    "Water-phase potential (V)",
+    "Water Phase Amount (g)",
+    "Co-Surfactant (Ratio)"
+  ],
+  "random_state": 42,
+  "test_size": 0.2,
+  "n_splits": 5,
+  "n_repeats": 10,
+  "top_k_features": 6,
+  "smote_k_neighbors": 3,
+  "figure_dpi": 600,
+  "selected_model": "DecisionTree-pruned + scaling + SMOTE",
+  "train_test_split_summary": {
+    "train_size": 166,
+    "test_size": 42,
+    "train_class_distribution": {
+      "1": 86,
+      "2": 54,
+      "3": 26
+    },
+    "test_class_distribution": {
+      "1": 22,
+      "2": 14,
+      "3": 6
+    }
+  },
+  "workflow_order": [
+    "data cleaning and duplicate removal",
+    "stratified 80:20 train-test split",
+    "repeated stratified CV on training set",
+    "fold-specific StandardScaler for non-baseline models",
+    "fold-specific SMOTE on training fold only",
+    "classifier fitting and validation",
+    "model selection from training-only CV",
+    "final fitting on full training set",
+    "training-only feature ranking and SHAP",
+    "one-time hold-out evaluation"
+  ],
+  "holdout_policy": "Hold-out test set is never used for scaling fitting, SMOTE, feature selection, SHAP background, model selection, or cross-validation."
+}

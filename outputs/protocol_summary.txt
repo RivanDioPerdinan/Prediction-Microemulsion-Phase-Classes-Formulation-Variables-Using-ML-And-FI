@@ -1,7 +1,7 @@
 Reproducible workflow summary
 =============================
 Random state: 42
-Dataset: manuscript-specific dataset with seven numerical formulation variables and target column 'FASA'
+Dataset: manuscript-specific dataset with seven numerical formulation variables and target column 'phase'
 Train-test split: stratified 80:20
 Model selection: repeated stratified 5-fold CV with 10 repeats on training data only
 Model configurations: fixed scikit-learn hyperparameters; no grid search in this version

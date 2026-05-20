@@ -1,6 +1,6 @@
 Finished successfully.
-Dataset: data/dataset.csv
-Output directory: D:\Perkuliahan\Tugas Akhir Kuliah\Revisi Reviewer Prediksi Kelas Fasa\Revisi 2\microemulsion-ml\outputs
-Selected model: DecisionTree + scaling + SMOTE
+Dataset: data\raw_dataset.csv
+Output directory: outputs
+Selected model: DecisionTree-pruned + scaling + SMOTE
 Figure DPI: 600
 SHAP available: True

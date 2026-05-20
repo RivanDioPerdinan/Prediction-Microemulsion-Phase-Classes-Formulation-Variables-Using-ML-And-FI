@@ -1,7 +1,7 @@
 feature,score
 Surfactant (HLB),0.14113507182625945
 Water Phase Amount (g),0.055346190766457457
-Water Phase (V),0.05332092510825206
+Water-phase potential (V),0.05332092510825206
 Oil Amount (g),0.04310975894068652
 Surfactant Amount (g),0.04091108543537624
 Co-Surfactant (Ratio),0.04054513419122091

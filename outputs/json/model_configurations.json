@@ -1,0 +1,164 @@
+[
+  {
+    "model": "Baseline SVM-linear (no scaling, no SMOTE)",
+    "uses_scaling": false,
+    "uses_smote": false,
+    "classifier": "SVC",
+    "hyperparameters": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 200,
+      "class_weight": null,
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "linear",
+      "max_iter": -1,
+      "probability": true,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    }
+  },
+  {
+    "model": "SVM-linear + scaling + SMOTE",
+    "uses_scaling": true,
+    "uses_smote": true,
+    "classifier": "SVC",
+    "hyperparameters": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 200,
+      "class_weight": null,
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "linear",
+      "max_iter": -1,
+      "probability": true,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    }
+  },
+  {
+    "model": "SVM-rbf + scaling + SMOTE",
+    "uses_scaling": true,
+    "uses_smote": true,
+    "classifier": "SVC",
+    "hyperparameters": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 200,
+      "class_weight": null,
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "rbf",
+      "max_iter": -1,
+      "probability": true,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    }
+  },
+  {
+    "model": "SVM-poly + scaling + SMOTE",
+    "uses_scaling": true,
+    "uses_smote": true,
+    "classifier": "SVC",
+    "hyperparameters": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 200,
+      "class_weight": null,
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "poly",
+      "max_iter": -1,
+      "probability": true,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    }
+  },
+  {
+    "model": "SVM-sigmoid + scaling + SMOTE",
+    "uses_scaling": true,
+    "uses_smote": true,
+    "classifier": "SVC",
+    "hyperparameters": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 200,
+      "class_weight": null,
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "sigmoid",
+      "max_iter": -1,
+      "probability": true,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    }
+  },
+  {
+    "model": "KNN + scaling + SMOTE",
+    "uses_scaling": true,
+    "uses_smote": true,
+    "classifier": "KNeighborsClassifier",
+    "hyperparameters": {
+      "algorithm": "auto",
+      "leaf_size": 30,
+      "metric": "minkowski",
+      "metric_params": null,
+      "n_jobs": null,
+      "n_neighbors": 5,
+      "p": 2,
+      "weights": "uniform"
+    }
+  },
+  {
+    "model": "GaussianNB + scaling + SMOTE",
+    "uses_scaling": true,
+    "uses_smote": true,
+    "classifier": "GaussianNB",
+    "hyperparameters": {
+      "priors": null,
+      "var_smoothing": 1e-09
+    }
+  },
+  {
+    "model": "DecisionTree-pruned + scaling + SMOTE",
+    "uses_scaling": true,
+    "uses_smote": true,
+    "classifier": "DecisionTreeClassifier",
+    "hyperparameters": {
+      "ccp_alpha": 0.006413,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": null,
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "random_state": 42,
+      "splitter": "best"
+    }
+  }
+]

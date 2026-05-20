@@ -11,17 +11,17 @@
     "holdout_usage": "final evaluation only; not used for feature ranking or model selection"
   },
   "dataset_summary": {
-    "dataset_path": "data\\dataset.csv",
+    "dataset_path": "data\\raw_dataset.csv",
     "required_features": [
       "Oil (mPa.s)",
       "Oil Amount (g)",
       "Surfactant (HLB)",
       "Surfactant Amount (g)",
-      "Water Phase (V)",
+      "Water-phase potential (V)",
       "Water Phase Amount (g)",
       "Co-Surfactant (Ratio)"
     ],
-    "target_column": "FASA",
+    "target_column": "phase",
     "ignored_extra_columns": [],
     "n_rows_raw": 217,
     "n_duplicates_raw": 9,
@@ -36,38 +36,38 @@
     }
   },
   "best_model_training_only_cv": {
-    "model": "DecisionTree + scaling + SMOTE",
-    "accuracy_mean": 0.8342602495543673,
-    "accuracy_std": 0.07449793219878285,
-    "accuracy_ci95": 0.02064977327251692,
-    "precision_macro_mean": 0.8478695657684822,
-    "precision_macro_std": 0.08616169883415127,
-    "precision_macro_ci95": 0.02388280443747911,
-    "recall_macro_mean": 0.7920023767082592,
-    "recall_macro_std": 0.09995182145936214,
-    "recall_macro_ci95": 0.02770523141237792,
-    "f1_macro_mean": 0.8037459781327628,
-    "f1_macro_std": 0.09379091010495583,
-    "f1_macro_ci95": 0.02599751391115788,
-    "training_time_mean": 0.008875188827514648,
-    "training_time_std": 0.0014838482790845708
+    "model": "DecisionTree-pruned + scaling + SMOTE",
+    "accuracy_mean": 0.8716934046345812,
+    "accuracy_std": 0.05630469197598238,
+    "accuracy_ci95": 0.015606864367464076,
+    "precision_macro_mean": 0.8759125772959736,
+    "precision_macro_std": 0.06904003673023926,
+    "precision_macro_ci95": 0.019136921832965635,
+    "recall_macro_mean": 0.827439889086948,
+    "recall_macro_std": 0.08411737135802168,
+    "recall_macro_ci95": 0.023316145771514925,
+    "f1_macro_mean": 0.8382105493632567,
+    "f1_macro_std": 0.07856135041054926,
+    "f1_macro_ci95": 0.021776095336873,
+    "training_time_mean": 0.004700641632080078,
+    "training_time_std": 0.000654154931509503
   },
   "selected_model_holdout_test": {
-    "selected_model": "DecisionTree + scaling + SMOTE",
-    "accuracy": 0.9047619047619048,
-    "precision_macro": 0.9305555555555555,
-    "recall_macro": 0.9134199134199134,
-    "f1_macro": 0.919732441471572,
-    "training_time_seconds": 0.10340332984924316
+    "selected_model": "DecisionTree-pruned + scaling + SMOTE",
+    "accuracy": 0.9285714285714286,
+    "precision_macro": 0.9453734671125975,
+    "recall_macro": 0.9372294372294373,
+    "f1_macro": 0.9407407407407407,
+    "training_time_seconds": 0.005202054977416992
   },
   "holdout_all_models": [
     {
-      "model": "DecisionTree + scaling + SMOTE",
-      "accuracy": 0.9047619047619048,
-      "precision_macro": 0.9305555555555555,
-      "recall_macro": 0.9134199134199134,
-      "f1_macro": 0.919732441471572,
-      "training_time_seconds": 0.006515026092529297
+      "model": "DecisionTree-pruned + scaling + SMOTE",
+      "accuracy": 0.9285714285714286,
+      "precision_macro": 0.9453734671125975,
+      "recall_macro": 0.9372294372294373,
+      "f1_macro": 0.9407407407407407,
+      "training_time_seconds": 0.007133960723876953
     },
     {
       "model": "KNN + scaling + SMOTE",
@@ -75,7 +75,7 @@
       "precision_macro": 0.9040247678018575,
       "recall_macro": 0.9155844155844156,
       "f1_macro": 0.90558615263572,
-      "training_time_seconds": 0.005008220672607422
+      "training_time_seconds": 0.005513906478881836
     },
     {
       "model": "SVM-rbf + scaling + SMOTE",
@@ -83,7 +83,7 @@
       "precision_macro": 0.8723370927318296,
       "recall_macro": 0.9155844155844156,
       "f1_macro": 0.8892641234104648,
-      "training_time_seconds": 0.021054983139038086
+      "training_time_seconds": 0.016729354858398438
     },
     {
       "model": "SVM-poly + scaling + SMOTE",
@@ -91,7 +91,7 @@
       "precision_macro": 0.7916666666666666,
       "recall_macro": 0.77994227994228,
       "f1_macro": 0.7839093273875882,
-      "training_time_seconds": 0.012531518936157227
+      "training_time_seconds": 0.01003265380859375
     },
     {
       "model": "Baseline SVM-linear (no scaling, no SMOTE)",
@@ -99,7 +99,7 @@
       "precision_macro": 0.8529741863075196,
       "recall_macro": 0.7395382395382395,
       "f1_macro": 0.7787755102040816,
-      "training_time_seconds": 0.46001195907592773
+      "training_time_seconds": 0.3664088249206543
     },
     {
       "model": "SVM-linear + scaling + SMOTE",
@@ -107,7 +107,7 @@
       "precision_macro": 0.7345848595848596,
       "recall_macro": 0.7734487734487735,
       "f1_macro": 0.7485747098150198,
-      "training_time_seconds": 0.023075103759765625
+      "training_time_seconds": 0.012997865676879883
     },
     {
       "model": "GaussianNB + scaling + SMOTE",
@@ -115,7 +115,7 @@
       "precision_macro": 0.7604617604617605,
       "recall_macro": 0.7691197691197691,
       "f1_macro": 0.7407407407407408,
-      "training_time_seconds": 0.005515098571777344
+      "training_time_seconds": 0.0060007572174072266
     },
     {
       "model": "SVM-sigmoid + scaling + SMOTE",
@@ -123,7 +123,7 @@
       "precision_macro": 0.6888616557734205,
       "recall_macro": 0.7518037518037518,
       "f1_macro": 0.705982905982906,
-      "training_time_seconds": 0.016545534133911133
+      "training_time_seconds": 0.03516387939453125
     }
   ],
   "top_features": {
@@ -140,7 +140,7 @@
       "Surfactant Amount (g)",
       "Surfactant (HLB)",
       "Oil (mPa.s)",
-      "Water Phase (V)",
+      "Water-phase potential (V)",
       "Water Phase Amount (g)"
     ],
     "LinearSVC-L2": [
@@ -148,61 +148,61 @@
       "Surfactant Amount (g)",
       "Surfactant (HLB)",
       "Oil (mPa.s)",
-      "Water Phase (V)",
+      "Water-phase potential (V)",
       "Water Phase Amount (g)"
     ],
-    "SHAP Rank 1 (DecisionTree + scaling + SMOTE)": [
+    "SHAP Rank 1 (DecisionTree-pruned + scaling + SMOTE)": [
+      "Surfactant (HLB)",
+      "Co-Surfactant (Ratio)",
+      "Water Phase Amount (g)",
+      "Oil (mPa.s)",
+      "Water-phase potential (V)",
+      "Surfactant Amount (g)"
+    ],
+    "SHAP Rank 2 (Baseline SVM-linear (no scaling, no SMOTE))": [
       "Surfactant (HLB)",
       "Co-Surfactant (Ratio)",
       "Oil (mPa.s)",
-      "Water Phase Amount (g)",
-      "Water Phase (V)",
-      "Surfactant Amount (g)"
-    ],
-    "SHAP Rank 2 (KNN + scaling + SMOTE)": [
-      "Surfactant (HLB)",
-      "Water Phase (V)",
-      "Water Phase Amount (g)",
-      "Oil Amount (g)",
       "Surfactant Amount (g)",
-      "Oil (mPa.s)"
+      "Water-phase potential (V)",
+      "Oil Amount (g)"
     ],
     "SHAP Rank 3 (SVM-rbf + scaling + SMOTE)": [
       "Surfactant (HLB)",
       "Water Phase Amount (g)",
-      "Water Phase (V)",
+      "Water-phase potential (V)",
       "Oil Amount (g)",
       "Surfactant Amount (g)",
       "Co-Surfactant (Ratio)"
     ]
   },
   "best_feature_subset_cv_row": {
-    "model": "DecisionTree + scaling + SMOTE",
-    "accuracy_mean": 0.8499108734402852,
-    "accuracy_std": 0.05703474537374952,
-    "accuracy_ci95": 0.015809224845074334,
-    "precision_macro_mean": 0.8593574285421033,
-    "precision_macro_std": 0.07092555125451998,
-    "precision_macro_ci95": 0.019659559794574327,
-    "recall_macro_mean": 0.8015781342840167,
-    "recall_macro_std": 0.07989701466339938,
-    "recall_macro_ci95": 0.022146322579099882,
-    "f1_macro_mean": 0.8128236019490245,
-    "f1_macro_std": 0.07646436351307226,
-    "f1_macro_ci95": 0.02119484022400899,
-    "training_time_mean": 0.005278286933898926,
-    "training_time_std": 0.001099554338018906,
+    "model": "DecisionTree-pruned + scaling + SMOTE",
+    "accuracy_mean": 0.8662388591800356,
+    "accuracy_std": 0.05211220239132217,
+    "accuracy_ci95": 0.014444765543840133,
+    "precision_macro_mean": 0.8752189934174051,
+    "precision_macro_std": 0.06278233220676764,
+    "precision_macro_ci95": 0.017402374634107896,
+    "recall_macro_mean": 0.8153115468409585,
+    "recall_macro_std": 0.07831860482277393,
+    "recall_macro_ci95": 0.021708809692795133,
+    "f1_macro_mean": 0.8287893904167244,
+    "f1_macro_std": 0.07285082220707799,
+    "f1_macro_ci95": 0.020193217675875026,
+    "training_time_mean": 0.004793148040771484,
+    "training_time_std": 0.0008397702958427631,
     "feature_method": "LinearSVC-L1",
-    "selected_features": "Co-Surfactant (Ratio); Surfactant Amount (g); Surfactant (HLB); Oil (mPa.s); Water Phase (V); Water Phase Amount (g)"
+    "selected_features": "Co-Surfactant (Ratio); Surfactant Amount (g); Surfactant (HLB); Oil (mPa.s); Water-phase potential (V); Water Phase Amount (g)"
   },
   "best_feature_subset_holdout_row": {
     "feature_method": "LinearSVC-L1",
-    "selected_features": "Co-Surfactant (Ratio); Surfactant Amount (g); Surfactant (HLB); Oil (mPa.s); Water Phase (V); Water Phase Amount (g)",
-    "model": "DecisionTree + scaling + SMOTE",
-    "accuracy": 0.9285714285714286,
-    "precision_macro": 0.9453734671125975,
-    "recall_macro": 0.9372294372294373,
-    "f1_macro": 0.9407407407407407,
-    "training_time_seconds": 0.008499860763549805
+    "selected_features": "Co-Surfactant (Ratio); Surfactant Amount (g); Surfactant (HLB); Oil (mPa.s); Water-phase potential (V); Water Phase Amount (g)",
+    "model": "DecisionTree-pruned + scaling + SMOTE",
+    "accuracy": 0.9523809523809523,
+    "precision_macro": 0.961038961038961,
+    "recall_macro": 0.961038961038961,
+    "f1_macro": 0.961038961038961,
+    "training_time_seconds": 0.003917217254638672
   }
 }

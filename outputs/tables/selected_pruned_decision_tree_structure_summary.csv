@@ -1,0 +1,2 @@
+model,ccp_alpha,max_depth,number_of_leaves,minimum_leaf_size,maximum_leaf_size
+selected_pruned_decision_tree,0.006413,8,17,2,52
